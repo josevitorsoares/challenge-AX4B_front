@@ -19,24 +19,23 @@ export const AppPagination = () => {
     const [page, setPage] = useState<number>(1);
     const [load, setLoad] = useState<boolean>(true);
 
-    const findPosts = async () => {
-        try {
-            setLoad(true);
-            const { postsOnPage, totalPosts }: IGetPosts = await getPosts(page);
-            setPost(postsOnPage);
-            setTotalPosts(totalPosts);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setLoad(false);
-        }
-    }
-
     const handlePageChange = (event: unknown, page: number) => {
         setPage(page);
     }
 
     useEffect(() => {
+        async function findPosts() {
+            try {
+                setLoad(true);
+                const { postsOnPage, totalPosts }: IGetPosts = await getPosts(page);
+                setPost(postsOnPage);
+                setTotalPosts(totalPosts);
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setLoad(false);
+            }
+        }
         findPosts();
     }, [page]);
 
