@@ -1,6 +1,6 @@
 # Challenge AX4B - Frontend
 
-Uma API para resolver um desafio proposto pela [AX4B - GROUP](https://ax4b.com/).
+Uma API para resolver um desafio proposto pela [AX4B - GROUP](https://ax4b.com/) referente a uma vaga de Desenvolvedor Fullstack.
 
 - [Challenge AX4B - Frontend](#challenge-ax4b---frontend)
   - [Desafio](#desafio)
